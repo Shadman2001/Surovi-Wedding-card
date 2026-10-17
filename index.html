@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2a1033">
+<meta name="description" content="Wedding invitation of AL Jaria Hasan and Ferdosi Surovi">
+<title>Wedding Invitation | AL Jaria Hasan &amp; Ferdosi Surovi</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💍%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --plum: #2a1033;
+  --plum-soft: #3d1a4a;
+  --gold: #d4af6a;
+  --gold-deep: #7a5c22;
+  --blush: #fbeff1;
+  --rose: #a83a55;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+html.locked, html.locked body { overflow: hidden; height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--plum);
+  background: var(--blush);
+  -webkit-font-smoothing: antialiased;
+}
+.script { font-family: 'Great Vibes', 'Snell Roundhand', cursive; font-weight: 400; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+.cover { position: fixed; inset: 0; z-index: 100; overflow: hidden; }
+.cover.done { display: none; }
+.door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background:
+    linear-gradient(45deg, rgba(212,175,106,.07) 25%, transparent 25%) 0 0 / 36px 36px,
+    linear-gradient(-45deg, rgba(212,175,106,.07) 25%, transparent 25%) 0 0 / 36px 36px,
+    linear-gradient(160deg, var(--plum-soft), var(--plum));
+  transition: transform 1.4s cubic-bezier(.77, 0, .18, 1) .5s;
+  will-change: transform;
+}
+.door::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(212,175,106,.75);
+}
+.door-left { left: 0; }
+.door-left::after { border-right: 0; }
+.door-right { right: 0; }
+.door-right::after { border-left: 0; }
+.opened .door-left { transform: translateX(-100%); }
+.opened .door-right { transform: translateX(100%); }
+
+.cover-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--blush);
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+.opened .cover-content { opacity: 0; }
+.cover-line { margin: 0; font-style: italic; font-size: 1.15rem; opacity: .92; }
+.cover-person { display: flex; flex-direction: column; align-items: center; }
+.cover-name { font-size: clamp(2.5rem, 10vw, 4.4rem); line-height: 1.15; }
+.cover-role { font-style: italic; font-size: 1.05rem; color: var(--gold); }
+.cover-amp { font-size: clamp(1.8rem, 6vw, 2.6rem); color: var(--gold); line-height: 1.3; }
+.cover-date { margin: 1.2rem 0 0; font-size: 1.25rem; letter-spacing: .08em; }
+.seal {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin-top: 1.8rem;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d9607a, #a83a55 55%, #7a2238);
+  color: #f8e7c4;
+  font-family: 'Great Vibes', 'Snell Roundhand', cursive;
+  font-size: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,.45), inset 0 0 0 4px rgba(212,175,106,.35);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.seal::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  animation: pulse 2.2s ease-out infinite;
+}
+.seal:disabled { cursor: default; }
+.tap { margin: 1rem 0 0; font-style: italic; font-size: 1.2rem; color: var(--gold); }
+@keyframes pulse {
+  0% { transform: scale(.9); opacity: .9; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.page {
+  transform: scale(1.05);
+  opacity: .4;
+  transition: transform 1.9s ease, opacity 1.9s ease;
+}
+.opened .page { transform: none; opacity: 1; }
+
+.section { padding: clamp(4rem, 10vw, 7rem) 1.5rem; }
+.section-dark { background: var(--plum); color: var(--blush); }
+.section-white { background: #fff; }
+.section-title {
+  margin: 0 0 .4rem;
+  text-align: center;
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.section-sub { margin: 0 auto 3rem; max-width: 34rem; text-align: center; font-style: italic; }
+.rule { width: 72px; height: 1px; margin: 1.5rem auto; background: var(--gold-deep); }
+.section-dark .rule { background: var(--gold); }
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: radial-gradient(ellipse at 50% 0%, #fff 0%, var(--blush) 60%);
+}
+.hero-lead { margin: 0; font-style: italic; font-size: 1.3rem; color: var(--gold-deep); }
+.hero-names { margin: 1rem 0 0; font-weight: 400; line-height: 1.15; outline: none; }
+.hero-name { display: block; font-size: clamp(2.8rem, 11vw, 5.5rem); }
+.hero-amp { display: block; font-size: clamp(2rem, 7vw, 3.2rem); color: var(--rose); line-height: 1.3; }
+.hero-date { margin: 0; font-size: 1.4rem; font-weight: 500; }
+.hero-note { margin: .5rem 0 0; max-width: 30rem; font-style: italic; }
+
+.count { display: flex; justify-content: center; gap: clamp(1rem, 4vw, 3rem); flex-wrap: wrap; }
+.count-item { min-width: 70px; text-align: center; }
+.count-num {
+  display: block;
+  font-size: clamp(2.4rem, 8vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.count-label { font-style: italic; font-size: 1.05rem; opacity: .9; }
+.count-done { margin: 0; text-align: center; font-size: 1.6rem; color: var(--gold); }
+
+.couple {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  max-width: 980px;
+  margin: 0 auto;
+}
+.divider { background: linear-gradient(to bottom, transparent, var(--gold-deep), transparent); }
+.person { text-align: center; }
+.monogram {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold-deep);
+  border-radius: 50%;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--rose);
+}
+.person-name { margin: 0; font-size: clamp(2.2rem, 6vw, 2.8rem); font-weight: 400; line-height: 1.2; }
+.person-role { margin: 0 0 1rem; font-style: italic; color: var(--gold-deep); }
+.person-bio { margin: 0 auto 1.5rem; max-width: 26rem; }
+.facts { margin: 0; }
+.facts dt { font-style: italic; color: var(--gold-deep); font-size: 1.05rem; }
+.facts dd { margin: 0 0 .8rem; font-weight: 500; }
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.event { padding: .25rem 0 .25rem 1.5rem; border-left: 2px solid var(--gold-deep); }
+.event-title { margin: 0 0 .5rem; font-size: 1.7rem; font-weight: 600; }
+.event p { margin: 0; }
+.event-time { color: var(--rose); font-weight: 600; }
+
+.closing { text-align: center; }
+.closing-text { max-width: 32rem; margin: 0 auto; font-size: 1.35rem; font-style: italic; }
+.closing-sign { margin: 1.5rem 0 0; font-size: clamp(2.2rem, 7vw, 3.2rem); color: var(--gold); line-height: 1.2; }
+.closing-family { margin: .5rem 0 0; opacity: .85; }
+
+.footer { padding: 1.5rem; text-align: center; font-size: 1rem; background: #1d0a24; color: rgba(251,239,241,.75); }
+.footer p { margin: 0; }
+
+@media (max-width: 720px) {
+  .couple { grid-template-columns: 1fr; }
+  .divider { height: 1px; background: linear-gradient(to right, transparent, var(--gold-deep), transparent); }
+}
+@media (max-height: 560px) {
+  .cover-content { padding: 1rem; }
+  .cover-name { font-size: 2.2rem; }
+  .seal { width: 70px; height: 70px; margin-top: 1rem; font-size: 1.5rem; }
+  .cover-date { margin-top: .6rem; }
+  .tap { margin-top: .6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+  }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="cover" id="cover">
+  <div class="door door-left"></div>
+  <div class="door door-right"></div>
+  <div class="cover-content">
+    <p class="cover-line">Together with their families</p>
+    <div class="cover-person">
+      <span class="cover-name script">AL Jaria Hasan</span>
+      <span class="cover-role">the bride</span>
+    </div>
+    <span class="cover-amp script">&amp;</span>
+    <div class="cover-person">
+      <span class="cover-name script">Ferdosi Surovi</span>
+      <span class="cover-role">the groom</span>
+    </div>
+    <p class="cover-line" style="margin-top:1rem">invite you to celebrate their wedding</p>
+    <p class="cover-date" data-fill="short">18 December 2026</p>
+    <button class="seal" id="openBtn" type="button" aria-label="Tap to open the wedding invitation">J &amp; F</button>
+    <p class="tap">Tap to Open</p>
+  </div>
+</div>
+
+<main class="page" id="page">
+
+  <header class="hero">
+    <p class="hero-lead">The wedding of</p>
+    <h1 class="hero-names script" id="top" tabindex="-1">
+      <span class="hero-name">AL Jaria Hasan</span>
+      <span class="hero-amp">&amp;</span>
+      <span class="hero-name">Ferdosi Surovi</span>
+    </h1>
+    <div class="rule"></div>
+    <p class="hero-date" data-fill="date">Friday 18 December 2026</p>
+    <p class="hero-note">With joy in our hearts, we invite you to share the beginning of our life together.</p>
+  </header>
+
+  <section class="section section-dark" aria-labelledby="count-title">
+    <h2 class="section-title" id="count-title">Counting down to our day</h2>
+    <div class="rule"></div>
+    <div class="count" id="countdown" data-date="2026-12-18T16:00:00+06:00" aria-live="off">
+      <div class="count-item"><span class="count-num" id="cd-days">00</span><span class="count-label">days</span></div>
+      <div class="count-item"><span class="count-num" id="cd-hours">00</span><span class="count-label">hours</span></div>
+      <div class="count-item"><span class="count-num" id="cd-mins">00</span><span class="count-label">minutes</span></div>
+      <div class="count-item"><span class="count-num" id="cd-secs">00</span><span class="count-label">seconds</span></div>
+    </div>
+    <p class="count-done" id="cd-done" hidden>Today we celebrate together.</p>
+  </section>
+
+  <section class="section" aria-labelledby="couple-title">
+    <h2 class="section-title" id="couple-title">The bride and the groom</h2>
+    <p class="section-sub">Two families, two hearts, one new beginning.</p>
+    <div class="couple">
+      <article class="person">
+        <div class="monogram script" aria-hidden="true">J</div>
+        <h3 class="person-name script">AL Jaria Hasan</h3>
+        <p class="person-role">The bride</p>
+        <p class="person-bio">Warm, kind and graceful, Jaria brings light to everyone around her. She is looking forward to beginning a new chapter with her best friend.</p>
+        <dl class="facts">
+          <dt>Daughter of</dt>
+          <dd>Mr. [Father’s name] &amp; Mrs. [Mother’s name]</dd>
+          <dt>Hometown</dt>
+          <dd>[City, Bangladesh]</dd>
+          <dt>Education</dt>
+          <dd>[Degree, Institution]</dd>
+        </dl>
+      </article>
+      <div class="divider" aria-hidden="true"></div>
+      <article class="person">
+        <div class="monogram script" aria-hidden="true">F</div>
+        <h3 class="person-name script">Ferdosi Surovi</h3>
+        <p class="person-role">The groom</p>
+        <p class="person-bio">Thoughtful, caring and steady, Surovi is ready to build a home full of laughter, respect and love alongside his partner for life.</p>
+        <dl class="facts">
+          <dt>Son of</dt>
+          <dd>Mr. [Father’s name] &amp; Mrs. [Mother’s name]</dd>
+          <dt>Hometown</dt>
+          <dd>[City, Bangladesh]</dd>
+          <dt>Profession</dt>
+          <dd>[Profession, Workplace]</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-white" aria-labelledby="events-title">
+    <h2 class="section-title" id="events-title">Where and when</h2>
+    <p class="section-sub">We would be honoured by your presence at both celebrations.</p>
+    <div class="events">
+      <article class="event">
+        <h3 class="event-title">Wedding ceremony</h3>
+        <p data-fill="date">Friday 18 December 2026</p>
+        <p class="event-time">4:00 PM</p>
+        <p>[Venue name]</p>
+        <p>[Full address, City]</p>
+      </article>
+      <article class="event">
+        <h3 class="event-title">Reception</h3>
+        <p data-fill="date">Friday 18 December 2026</p>
+        <p class="event-time">7:00 PM</p>
+        <p>[Venue name]</p>
+        <p>[Full address, City]</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-dark closing" aria-labelledby="closing-title">
+    <h2 class="section-title" id="closing-title">With love and gratitude</h2>
+    <div class="rule"></div>
+    <p class="closing-text">Your presence and your blessings will make our day complete. Thank you for being part of our story.</p>
+    <p class="closing-sign script">AL Jaria Hasan &amp; Ferdosi Surovi</p>
+    <p class="closing-family">and their families</p>
+  </section>
+
+  <footer class="footer">
+    <p>Made with love for the wedding of AL Jaria Hasan &amp; Ferdosi Surovi</p>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var cover = document.getElementById('cover');
+  var btn = document.getElementById('openBtn');
+  var page = document.getElementById('page');
+  var countdown = document.getElementById('countdown');
+  var opened = false;
+
+  page.setAttribute('inert', '');
+
+  function openCard() {
+    if (opened) { return; }
+    opened = true;
+    btn.disabled = true;
+    root.classList.add('opened');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(function () {
+      cover.classList.add('done');
+      cover.setAttribute('aria-hidden', 'true');
+      root.classList.remove('locked');
+      page.removeAttribute('inert');
+      window.scrollTo(0, 0);
+      var top = document.getElementById('top');
+      if (top) { top.focus({ preventScroll: true }); }
+    }, reduce ? 50 : 2000);
+  }
+
+  btn.addEventListener('click', openCard);
+
+  var target = new Date(countdown.getAttribute('data-date')).getTime();
+
+  if (!isNaN(target)) {
+    var when = new Date(target);
+    var formats = {
+      date: { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Dhaka' },
+      short: { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Dhaka' }
+    };
+    Object.keys(formats).forEach(function (key) {
+      var nodes = document.querySelectorAll('[data-fill="' + key + '"]');
+      for (var i = 0; i < nodes.length; i++) {
+        try {
+          nodes[i].textContent = when.toLocaleDateString('en-GB', formats[key]);
+        } catch (e) {}
+      }
+    });
+  }
+
+  var ids = {
+    days: document.getElementById('cd-days'),
+    hours: document.getElementById('cd-hours'),
+    mins: document.getElementById('cd-mins'),
+    secs: document.getElementById('cd-secs')
+  };
+  var done = document.getElementById('cd-done');
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      countdown.hidden = true;
+      done.hidden = false;
+      return false;
+    }
+    ids.days.textContent = pad(Math.floor(diff / 86400000));
+    ids.hours.textContent = pad(Math.floor(diff / 3600000) % 24);
+    ids.mins.textContent = pad(Math.floor(diff / 60000) % 60);
+    ids.secs.textContent = pad(Math.floor(diff / 1000) % 60);
+    return true;
+  }
+
+  if (isNaN(target)) {
+    countdown.hidden = true;
+  } else if (tick()) {
+    var timer = setInterval(function () {
+      if (!tick()) { clearInterval(timer); }
+    }, 1000);
+  }
+})();
+</script>
+</body>
+</html>
